@@ -28,6 +28,27 @@ html {
     --input-border: #e0e0e0;
 }
 
+/* System theme (default) - follows user's OS preference */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --bg-primary: #121212;
+        --bg-secondary: #1e1e1e;
+        --bg-tertiary: #2d2d2d;
+        --text-primary: #ffffff;
+        --text-secondary: #e0e0e0;
+        --text-muted: #b0b0b0;
+        --accent-color: #4a9eff;
+        --accent-hover: #357abd;
+        --border-color: #333333;
+        --shadow: rgba(0, 0, 0, 0.5);
+        --shadow-hover: rgba(0, 0, 0, 0.6);
+        --navbar-bg: rgba(18, 18, 18, 0.95);
+        --card-bg: #1e1e1e;
+        --input-bg: #2d2d2d;
+        --input-border: #444444;
+    }
+}
+
 [data-theme="dark"] {
     /* Dark theme */
     --bg-primary: #121212;
@@ -422,11 +443,6 @@ section {
     /* Custom scrollbar */
     scrollbar-width: auto;
     scrollbar-color: var(--accent-color) var(--bg-secondary);
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    padding: 20px;
-    background: var(--card-bg);
-    box-shadow: 0 2px 10px var(--shadow);
 }
 
 .scrollable-news::-webkit-scrollbar {

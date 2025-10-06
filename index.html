@@ -19,10 +19,7 @@
                     <a href="#home" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#publications" class="nav-link">Publications</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#teaching" class="nav-link">Teaching</a>
+                    <a href="#news" class="nav-link">News</a>
                 </li>
                 <li class="nav-item">
                     <a href="#scholarships" class="nav-link">Scholarships</a>
@@ -53,8 +50,8 @@
                         <a href="mailto:ritvik.iitd@gmail.com" class="btn btn-primary">
                             <i class="fas fa-envelope"></i> Email
                         </a>
-                        <a href="https://scholar.google.com" class="btn btn-secondary" target="_blank">
-                            <i class="fab fa-google"></i> Google Scholar
+                        <a href="https://scholar.google.com/citations?user=vTYNQkwAAAAJ" class="btn btn-secondary" target="_blank">
+                            🎓 Google Scholar
                         </a>
                         <a href="https://linkedin.com" class="btn btn-secondary" target="_blank">
                             <i class="fab fa-linkedin"></i> LinkedIn
@@ -91,133 +88,168 @@
         </section>
 
         <!-- Recent News Section -->
-        <section class="news">
+        <section id="news" class="news">
             <div class="container">
                 <h2 class="section-title">Recent News</h2>
+                <div class="news-year-selector">
+                    <select id="yearSelector" class="year-dropdown">
+                        <option value="all">All Years</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                    </select>
+                </div>
                 <div class="news-timeline">
-                    <div class="news-item">
+                    <!-- 2025 News -->
+                    <div class="news-item" data-year="2025">
                         <div class="news-date">Apr'25</div>
                         <div class="news-content">
                             Our most recent paper at Essential AI on studying reflection capabilities in LLMs during pre-training got released <a href="#" class="news-link">[paper]</a>
                         </div>
                     </div>
-                    <div class="news-item">
+                    <div class="news-item" data-year="2025">
                         <div class="news-date">Mar'25</div>
                         <div class="news-content">
                             I joined Essential AI as a Research Engineer, where I work on advancing open science and developing frontier capabilities in LLMs.
                         </div>
                     </div>
-                    <div class="news-item">
+
+                    <!-- 2024 News -->
+                    <div class="news-item" data-year="2024">
                         <div class="news-date">Dec'24</div>
                         <div class="news-content">
                             My paper, in collaboration with MIT Media Lab, Camera Culture, titled Co-Dream: Collaborative dream synthesis over decentralized models, got accepted at AAAI 2025 <a href="#" class="news-link">[website]</a>
                         </div>
                     </div>
-                    <div class="news-item">
+                    <div class="news-item" data-year="2024">
                         <div class="news-date">Dec'24</div>
                         <div class="news-content">
                             My paper on ZeroHAR: Sensor Context Augments Zero-Shot Wearable Action Recognition got accepted at AAAI 2025.
                         </div>
                     </div>
-                    <div class="news-item">
+                    <div class="news-item" data-year="2024">
                         <div class="news-date">Nov'24</div>
                         <div class="news-content">
                             My first patent got published for Zero Knowledge Right of Ownership for Neural Networks (ZKROWNN) <a href="#" class="news-link">[paper]</a> <a href="#" class="news-link">[patent]</a>
                         </div>
                     </div>
-                    <div class="news-item">
+                    <div class="news-item" data-year="2024">
                         <div class="news-date">May'24</div>
                         <div class="news-content">
                             My paper on First 100 days of pandemic; an interplay of pharmaceutical, behavioral and digital interventions -- A study using agent based modeling was awarded the Best Student Paper runners up at AAMAS'24 (The 23rd International Conference on Autonomous Agents and Multi-Agent Systems).
                         </div>
                     </div>
-                    <div class="news-item">
+                    <div class="news-item" data-year="2024">
                         <div class="news-date">Apr'24</div>
                         <div class="news-content">
                             Joined Amazon's AWS Cryptography team as a software engineer.
                         </div>
                     </div>
-                    <div class="news-item">
+                    <div class="news-item" data-year="2024">
                         <div class="news-date">Jan'24</div>
                         <div class="news-content">
                             Presented my paper on First 100 days of pandemic; an interplay of pharmaceutical, behavioral and digital interventions -- A study using agent based modeling at CSE Open House, UCSD 2024.
                         </div>
                     </div>
+                    <div class="news-item" data-year="2024">
+                        <div class="news-date">Jan'24</div>
+                        <div class="news-content">
+                            My paper in collaboration with MIT Media Lab, Camera Culture on First 100 days of pandemic; an interplay of pharmaceutical, behavioral and digital interventions -- A study using agent based modeling was accepted as a full paper and Oral presentation at AAMAS'24 (The 23rd International Conference on Autonomous Agents and Multi-Agent Systems) being held at Auckland, New Zealand in May 2024.
+                        </div>
+                    </div>
+
+                    <!-- 2023 News -->
+                    <div class="news-item" data-year="2023">
+                        <div class="news-date">Dec'23</div>
+                        <div class="news-content">
+                            Reviewer and Area Chair for the second time @ TinyPapers, ICLR 2024 <a href="#" class="news-link">[openreview]</a> being held at Vienna, Austria
+                        </div>
+                    </div>
+                    <div class="news-item" data-year="2023">
+                        <div class="news-date">Sep'23 to Mar'24</div>
+                        <div class="news-content">
+                            Graduate Student Researcher working with Prof. Rajesh Gupta, Prof. Jingbo Shang, with the MESL Lab and Shang Data Lab
+                        </div>
+                    </div>
+                    <div class="news-item" data-year="2023">
+                        <div class="news-date">Jul'23</div>
+                        <div class="news-content">
+                            Attended the International Conference on Machine Learning (ICML) 2023 held in Honolulu, Hawai'i, USA
+                        </div>
+                    </div>
+                    <div class="news-item" data-year="2023">
+                        <div class="news-date">Jun'23 to Sep'23</div>
+                        <div class="news-content">
+                            Intern at AWS Cryptography as a Software Engineer
+                        </div>
+                    </div>
+                    <div class="news-item" data-year="2023">
+                        <div class="news-date">Jun'23</div>
+                        <div class="news-content">
+                            Awarded the UCSD Leadership and Excellence Scholarship of $1000 by the CSE Alumni Advisory Board
+                        </div>
+                    </div>
+                    <div class="news-item" data-year="2023">
+                        <div class="news-date">May'23</div>
+                        <div class="news-content">
+                            Volunteer at the International Conference on Learning Representations 2023 held in Kigali, Rwanda
+                        </div>
+                    </div>
+                    <div class="news-item" data-year="2023">
+                        <div class="news-date">Apr'23</div>
+                        <div class="news-content">
+                            Reviewer and Area Chair @ TinyPapers, ICLR 2023 <a href="#" class="news-link">[openreview]</a>
+                        </div>
+                    </div>
+                    <div class="news-item" data-year="2023">
+                        <div class="news-date">Feb'23</div>
+                        <div class="news-content">
+                            Our work at ACES Lab "Zero Knowledge Right of Ownership for Neural Networks (ZKROWNN)" got accepted at Design Automation Conference (DAC 2023)
+                        </div>
+                    </div>
+                    <div class="news-item" data-year="2023">
+                        <div class="news-date">Jan'23</div>
+                        <div class="news-content">
+                            My first research paper on "Domain Generalization in Robust Invariant Representation" got accepted at PML4DC workshop at ICLR 2023
+                        </div>
+                    </div>
+
+                    <!-- 2022 News -->
+                    <div class="news-item" data-year="2022">
+                        <div class="news-date">Oct'22-Mar'23</div>
+                        <div class="news-content">
+                            Joined the ACES Lab as a Graduate Student Researcher with Prof. Farnizaz Koushanfar
+                        </div>
+                    </div>
+                    <div class="news-item" data-year="2022">
+                        <div class="news-date">Sep'22</div>
+                        <div class="news-content">
+                            Joined my master's program in Computer Science at UC San Diego
+                        </div>
+                    </div>
+                    <div class="news-item" data-year="2022">
+                        <div class="news-date">Jun'22</div>
+                        <div class="news-content">
+                            Completed my Bachelor's program in Electrical Engineering at IIT Delhi
+                        </div>
+                    </div>
+
+                    <!-- 2019 News -->
+                    <div class="news-item" data-year="2019">
+                        <div class="news-date">Sep'19</div>
+                        <div class="news-content">
+                            Semester Exchange in the Computer Science department at INSA Lyon, France supervised by Prof. Frédéric Le Mouël
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Publications Section -->
-        <section id="publications" class="publications">
-            <div class="container">
-                <h2 class="section-title">Publications & Patents</h2>
-                <div class="publications-grid">
-                    <div class="publication-item">
-                        <h3 class="publication-title">Co-Dream: Collaborative dream synthesis over decentralized models</h3>
-                        <p class="publication-authors">Ritvik Kapila, et al.</p>
-                        <p class="publication-venue">AAAI 2025</p>
-                        <div class="publication-links">
-                            <a href="#" class="publication-link">[Paper]</a>
-                            <a href="#" class="publication-link">[Website]</a>
-                        </div>
-                    </div>
-                    <div class="publication-item">
-                        <h3 class="publication-title">ZeroHAR: Sensor Context Augments Zero-Shot Wearable Action Recognition</h3>
-                        <p class="publication-authors">Ritvik Kapila, et al.</p>
-                        <p class="publication-venue">AAAI 2025</p>
-                        <div class="publication-links">
-                            <a href="#" class="publication-link">[Paper]</a>
-                        </div>
-                    </div>
-                    <div class="publication-item">
-                        <h3 class="publication-title">Zero Knowledge Right of Ownership for Neural Networks (ZKROWNN)</h3>
-                        <p class="publication-authors">Ritvik Kapila, et al.</p>
-                        <p class="publication-venue">Patent Published, Nov 2024</p>
-                        <div class="publication-links">
-                            <a href="#" class="publication-link">[Paper]</a>
-                            <a href="#" class="publication-link">[Patent]</a>
-                        </div>
-                    </div>
-                    <div class="publication-item">
-                        <h3 class="publication-title">First 100 days of pandemic; an interplay of pharmaceutical, behavioral and digital interventions</h3>
-                        <p class="publication-authors">Ritvik Kapila, et al.</p>
-                        <p class="publication-venue">AAMAS 2024 - Best Student Paper Runner-up</p>
-                        <div class="publication-links">
-                            <a href="#" class="publication-link">[Paper]</a>
-                        </div>
-                    </div>
-                    <div class="publication-item">
-                        <h3 class="publication-title">Domain Generalization in Robust Invariant Representation</h3>
-                        <p class="publication-authors">Ritvik Kapila, et al.</p>
-                        <p class="publication-venue">PML4DC workshop at ICLR 2023</p>
-                        <div class="publication-links">
-                            <a href="#" class="publication-link">[Paper]</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Teaching Section -->
-        <section id="teaching" class="teaching">
-            <div class="container">
-                <h2 class="section-title">Teaching & Service</h2>
-                <div class="teaching-content">
-                    <div class="teaching-item">
-                        <h3>Reviewer and Area Chair</h3>
-                        <p>TinyPapers, ICLR 2024 & 2023</p>
-                    </div>
-                    <div class="teaching-item">
-                        <h3>Graduate Student Researcher</h3>
-                        <p>MESL Lab and Shang Data Lab, UCSD (Sep'23 - Mar'24)</p>
-                    </div>
-                    <div class="teaching-item">
-                        <h3>Graduate Student Researcher</h3>
-                        <p>ACES Lab, UCSD (Oct'22 - Mar'23)</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Scholarships Section -->
         <section id="scholarships" class="scholarships">
@@ -225,16 +257,20 @@
                 <h2 class="section-title">Awards & Scholarships</h2>
                 <div class="scholarships-content">
                     <div class="scholarship-item">
+                        <h3>AAMAS 2024 Best Student Paper Runners Up Award</h3>
+                        <p>My paper on First 100 days of pandemic; an interplay of pharmaceutical, behavioral and digital interventions -- A study using agent based modeling was awarded the Best Student Paper runners up at AAMAS'24 for being in the Top 3 Student Papers out of 883 submissions (The 23rd International Conference on Autonomous Agents and Multi-Agent Systems) (2024)</p>
+                    </div>
+                    <div class="scholarship-item">
                         <h3>UCSD Leadership and Excellence Scholarship</h3>
-                        <p>$1000 by the CSE Alumni Advisory Board (Jun'23)</p>
+                        <p>Scholarship of $1000 awarded to the top 3 graduate students every year in the CSE department by the CSE Alumni Advisory Board for contributions to leadership and initiatives within and outside of the CSE department (2023)</p>
+                    </div>
+                    <div class="scholarship-item">
+                        <h3>IIT Delhi Academic Merit Award</h3>
+                        <p>Consistently ranked amongst the top 7% students at the Indian Institute of Technology, with a cumulative GPA of 9.113/10.0 (2017-2021)</p>
                     </div>
                     <div class="scholarship-item">
                         <h3>IIT Delhi Outstanding Sportsperson Award</h3>
                         <p>For consistently contributing to sports, especially Basketball at IIT Delhi</p>
-                    </div>
-                    <div class="scholarship-item">
-                        <h3>Best Student Paper Runner-up</h3>
-                        <p>AAMAS'24 - The 23rd International Conference on Autonomous Agents and Multi-Agent Systems</p>
                     </div>
                 </div>
             </div>
@@ -245,27 +281,60 @@
             <div class="container">
                 <h2 class="section-title">Contact</h2>
                 <div class="contact-content">
-                    <p class="contact-email">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:ritvik.iitd@gmail.com">ritvik.iitd@gmail.com</a>
-                    </p>
-                    <div class="social-links">
-                        <a href="https://scholar.google.com" class="social-link" target="_blank">
-                            <i class="fab fa-google"></i>
-                            <span>Google Scholar</span>
-                        </a>
-                        <a href="https://linkedin.com" class="social-link" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://github.com" class="social-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="#" class="social-link" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                            <span>Twitter</span>
-                        </a>
+                    <div class="contact-info">
+                        <p class="contact-email">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:ritvik.iitd@gmail.com">ritvik.iitd@gmail.com</a>
+                        </p>
+                        <div class="social-links">
+                            <a href="https://scholar.google.com/citations?user=vTYNQkwAAAAJ" class="social-link" target="_blank">
+                                🎓
+                                <span>Google Scholar</span>
+                            </a>
+                            <a href="https://linkedin.com" class="social-link" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com" class="social-link" target="_blank">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="social-link" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <h3>Send me a message</h3>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name (Optional)</label>
+                                <input type="text" id="name" name="name" placeholder="Your name or leave blank for anonymous">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email (Optional)</label>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required placeholder="Your message here..." rows="5"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                        
+                        <div id="formStatus" class="form-status"></div>
                     </div>
                 </div>
             </div>

@@ -211,6 +211,67 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => imageObserver.observe(img));
 });
 
+// Year filtering for news section
+document.addEventListener('DOMContentLoaded', () => {
+    const yearSelector = document.getElementById('yearSelector');
+    const newsItems = document.querySelectorAll('.news-item');
+    
+    if (yearSelector) {
+        yearSelector.addEventListener('change', (e) => {
+            const selectedYear = e.target.value;
+            
+            newsItems.forEach(item => {
+                const itemYear = item.getAttribute('data-year');
+                
+                if (selectedYear === 'all' || itemYear === selectedYear) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    }
+});
+
+// Contact form handling
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const name = formData.get('name') || 'Anonymous';
+            const email = formData.get('email') || 'No email provided';
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Create mailto link
+            const mailtoLink = `mailto:ritvik.iitd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+            )}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            formStatus.textContent = 'Opening your email client... Please send the email to complete the process.';
+            formStatus.className = 'form-status success';
+            formStatus.style.display = 'block';
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Hide status message after 5 seconds
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 5000);
+        });
+    }
+});
+
 // Console welcome message
 console.log('%c👋 Welcome to Ritvik Kapila\'s Website!', 'color: #3498db; font-size: 16px; font-weight: bold;');
 console.log('%cBuilt with ❤️ for the academic community', 'color: #666; font-size: 12px;');

@@ -340,22 +340,10 @@ section {
 .news-item {
     position: relative;
     margin-bottom: 2rem;
-    padding-left: 80px;
+    padding-left: 0;
     z-index: 2;
 }
 
-.news-item::before {
-    content: '';
-    position: absolute;
-    left: 22px;
-    top: 8px;
-    width: 16px;
-    height: 16px;
-    background: #3498db;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px #3498db;
-}
 
 .news-date {
     font-weight: 600;
@@ -700,20 +688,20 @@ section {
 
 /* X (formerly Twitter) color styling */
 .btn-secondary span[style*="font-weight: bold"] {
-    color: #1da1f2 !important;
+    color: #000000 !important;
 }
 
 .social-link span[style*="font-weight: bold"] {
-    color: #1da1f2;
+    color: #000000;
 }
 
 .social-link:hover span[style*="font-weight: bold"] {
-    color: #0d8bd9;
+    color: #333333;
 }
 
 /* X color in hero section */
 .btn-secondary:hover span[style*="font-weight: bold"] {
-    color: #0d8bd9;
+    color: #333333;
 }
 
 /* Footer */
@@ -802,13 +790,10 @@ section {
     }
 
     .news-item {
-        padding-left: 60px;
+        padding-left: 0;
     }
 
 
-    .news-item::before {
-        left: 12px;
-    }
 
     .profile-photo {
         width: 300px;

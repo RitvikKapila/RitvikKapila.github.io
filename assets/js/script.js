@@ -213,35 +213,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Year filtering for news section
 document.addEventListener('DOMContentLoaded', () => {
-    const yearSelector = document.getElementById('yearSelector');
-    const newsItems = document.querySelectorAll('.news-item');
-    
-    if (yearSelector && newsItems.length > 0) {
-        // Filter news items function
-        const filterNews = (selectedYear) => {
-            newsItems.forEach(item => {
-                const itemYear = item.getAttribute('data-year');
+    // Wait a bit for DOM to be fully loaded
+    setTimeout(() => {
+        const yearSelector = document.getElementById('yearSelector');
+        const newsItems = document.querySelectorAll('.news-item');
+        
+        console.log('Year selector found:', !!yearSelector);
+        console.log('News items found:', newsItems.length);
+        
+        if (yearSelector && newsItems.length > 0) {
+            // Filter news items function
+            const filterNews = (selectedYear) => {
+                console.log('Filtering for year:', selectedYear);
+                let visibleCount = 0;
                 
-                if (selectedYear === 'all' || itemYear === selectedYear) {
-                    item.style.display = 'block';
-                    item.classList.remove('hidden');
-                } else {
-                    item.style.display = 'none';
-                    item.classList.add('hidden');
-                }
+                newsItems.forEach((item, index) => {
+                    const itemYear = item.getAttribute('data-year');
+                    console.log(`Item ${index}: year=${itemYear}, selected=${selectedYear}`);
+                    
+                    if (selectedYear === 'all' || itemYear === selectedYear) {
+                        item.style.display = 'block';
+                        item.style.visibility = 'visible';
+                        item.classList.remove('hidden');
+                        visibleCount++;
+                        console.log(`Showing item ${index} for year ${itemYear}`);
+                    } else {
+                        item.style.display = 'none';
+                        item.style.visibility = 'hidden';
+                        item.classList.add('hidden');
+                        console.log(`Hiding item ${index} for year ${itemYear}`);
+                    }
+                });
+                
+                console.log(`Total visible items: ${visibleCount}`);
+            };
+            
+            // Set default to 2025 and filter on page load
+            yearSelector.value = '2025';
+            filterNews('2025');
+            
+            // Add event listener for year changes
+            yearSelector.addEventListener('change', (e) => {
+                const selectedYear = e.target.value;
+                console.log('Year changed to:', selectedYear);
+                filterNews(selectedYear);
             });
-        };
-        
-        // Set default to 2025 and filter on page load
-        yearSelector.value = '2025';
-        filterNews('2025');
-        
-        // Add event listener for year changes
-        yearSelector.addEventListener('change', (e) => {
-            const selectedYear = e.target.value;
-            filterNews(selectedYear);
-        });
-    }
+        } else {
+            console.error('Year selector or news items not found!');
+        }
+    }, 100);
 });
 
 // Contact form handling
@@ -276,6 +296,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Test function for debugging
+function testFilter() {
+    const newsItems = document.querySelectorAll('.news-item');
+    console.log('Total news items:', newsItems.length);
+    newsItems.forEach((item, index) => {
+        const year = item.getAttribute('data-year');
+        const display = item.style.display;
+        console.log(`Item ${index}: year=${year}, display=${display}`);
+    });
+}
 
 // Console welcome message
 console.log('%c👋 Welcome to Ritvik Kapila\'s Website!', 'color: #3498db; font-size: 16px; font-weight: bold;');

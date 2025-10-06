@@ -574,21 +574,23 @@ section {
 }
 
 .contact-form button[type="submit"] {
-    background: linear-gradient(45deg, #3498db, #2980b9);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    justify-content: center;
-    width: 100%;
-    margin-top: 1rem;
+    background: linear-gradient(45deg, #3498db, #2980b9) !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    border-radius: 50px !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .contact-form button[type="submit"]:hover {

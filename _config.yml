@@ -1,0 +1,76 @@
+# Site settings
+title: Ritvik Kapila
+description: ML Researcher at Essential AI
+author: Ritvik Kapila
+email: ritvik.iitd@gmail.com
+url: https://ritvik-kapila.github.io
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:name/
+  news:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      layout: "news"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - .gitignore
+  - .sass-cache/
+  - .jekyll-cache/
+  - .jekyll-metadata
+
+# Include
+include:
+  - _redirects
+
+# SEO
+seo:
+  type: Person
+  name: Ritvik Kapila
+  job_title: ML Researcher
+  organization: Essential AI
+  url: https://ritvik-kapila.github.io
+  image: /assets/images/profile.jpg
+  social:
+    google_scholar: https://scholar.google.com
+    linkedin: https://linkedin.com
+    github: https://github.com
+    twitter: https://twitter.com

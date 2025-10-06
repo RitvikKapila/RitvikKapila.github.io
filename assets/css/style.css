@@ -30,21 +30,21 @@ html {
 
 [data-theme="dark"] {
     /* Dark theme */
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #2d2d2d;
-    --bg-tertiary: #404040;
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-tertiary: #2d2d2d;
     --text-primary: #ffffff;
     --text-secondary: #e0e0e0;
     --text-muted: #b0b0b0;
     --accent-color: #4a9eff;
     --accent-hover: #357abd;
-    --border-color: #404040;
-    --shadow: rgba(0, 0, 0, 0.3);
-    --shadow-hover: rgba(0, 0, 0, 0.4);
-    --navbar-bg: rgba(26, 26, 26, 0.95);
-    --card-bg: #2d2d2d;
-    --input-bg: #404040;
-    --input-border: #555;
+    --border-color: #333333;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --shadow-hover: rgba(0, 0, 0, 0.6);
+    --navbar-bg: rgba(18, 18, 18, 0.95);
+    --card-bg: #1e1e1e;
+    --input-bg: #2d2d2d;
+    --input-border: #444444;
 }
 
 body {
@@ -246,6 +246,7 @@ body {
     font-weight: 400;
     margin-bottom: 2rem;
     opacity: 0.9;
+    color: var(--text-secondary);
 }
 
 .hero-description {
@@ -254,6 +255,7 @@ body {
     margin: 0 auto 3rem;
     opacity: 0.9;
     line-height: 1.8;
+    color: var(--text-secondary);
 }
 
 .hero-links {
@@ -334,7 +336,7 @@ section {
     font-weight: 700;
     text-align: center;
     margin-bottom: 3rem;
-    color: #2c3e50;
+    color: var(--text-primary);
     position: relative;
 }
 
@@ -474,34 +476,35 @@ section {
     top: 8px;
     width: 12px;
     height: 12px;
-    background-color: #3498db;
+    background-color: var(--accent-color);
     border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 0 0 2px #3498db;
+    border: 3px solid var(--bg-primary);
+    box-shadow: 0 0 0 2px var(--accent-color);
     z-index: 3;
 }
 
 
 .news-date {
     font-weight: 600;
-    color: #3498db;
+    color: var(--accent-color);
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
 }
 
 .news-content {
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.5;
     font-size: 0.9rem;
 }
 
 .news-link {
-    color: #3498db;
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: 500;
 }
 
 .news-link:hover {
+    color: var(--accent-hover);
     text-decoration: underline;
 }
 
@@ -687,7 +690,7 @@ section {
 
 .form-group label {
     font-weight: 500;
-    color: #555;
+    color: var(--text-secondary);
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
 }
@@ -845,8 +848,8 @@ span[style*="font-weight: bold"]:hover {
 
 /* Footer */
 .footer {
-    background: #2c3e50;
-    color: white;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
     text-align: center;
     padding: 2rem 0;
 }

@@ -598,6 +598,55 @@ section {
     min-height: 120px;
 }
 
+/* Captcha Styling */
+.captcha-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#captchaQuestion {
+    font-weight: 600;
+    color: #3498db;
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 2px solid #e0e0e0;
+    min-width: 120px;
+    text-align: center;
+}
+
+#captcha {
+    flex: 1;
+    min-width: 80px;
+    max-width: 100px;
+}
+
+.captcha-refresh {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+}
+
+.captcha-refresh:hover {
+    background: #2980b9;
+    transform: rotate(180deg);
+}
+
+.captcha-refresh i {
+    font-size: 14px;
+}
+
 .contact-form button[type="submit"] {
     background: linear-gradient(45deg, #3498db, #2980b9) !important;
     color: white !important;

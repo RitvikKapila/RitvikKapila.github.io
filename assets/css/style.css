@@ -186,7 +186,7 @@ body {
     font-weight: 400;
     margin-bottom: 2rem;
     opacity: 0.9;
-    color: var(--text-secondary);
+    color: white;
 }
 
 .hero-description {
@@ -195,7 +195,7 @@ body {
     margin: 0 auto 3rem;
     opacity: 0.9;
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: white;
 }
 
 .hero-links {

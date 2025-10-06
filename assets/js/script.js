@@ -308,64 +308,6 @@ function testFilter() {
     });
 }
 
-// Captcha functionality
-let currentCaptchaAnswer = 0;
-
-function generateCaptcha() {
-    const num1 = Math.floor(Math.random() * 10) + 1;
-    const num2 = Math.floor(Math.random() * 10) + 1;
-    const operations = ['+', '-', '*'];
-    const operation = operations[Math.floor(Math.random() * operations.length)];
-    
-    let question, answer;
-    
-    switch(operation) {
-        case '+':
-            question = `What is ${num1} + ${num2}?`;
-            answer = num1 + num2;
-            break;
-        case '-':
-            // Ensure positive result
-            const larger = Math.max(num1, num2);
-            const smaller = Math.min(num1, num2);
-            question = `What is ${larger} - ${smaller}?`;
-            answer = larger - smaller;
-            break;
-        case '*':
-            question = `What is ${num1} × ${num2}?`;
-            answer = num1 * num2;
-            break;
-    }
-    
-    currentCaptchaAnswer = answer;
-    document.getElementById('captchaQuestion').textContent = question;
-    document.getElementById('captcha').value = '';
-}
-
-function validateCaptcha() {
-    const userAnswer = parseInt(document.getElementById('captcha').value);
-    return userAnswer === currentCaptchaAnswer;
-}
-
-// Initialize captcha when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    generateCaptcha();
-    
-    // Add refresh captcha functionality
-    document.getElementById('refreshCaptcha').addEventListener('click', function() {
-        generateCaptcha();
-    });
-    
-    // Add form validation
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        if (!validateCaptcha()) {
-            e.preventDefault();
-            alert('Please solve the security check correctly.');
-            document.getElementById('captcha').focus();
-            return false;
-        }
-    });
-});
 
 // Console welcome message
 console.log('%c👋 Welcome to Ritvik Kapila\'s Website!', 'color: #3498db; font-size: 16px; font-weight: bold;');

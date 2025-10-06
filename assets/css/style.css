@@ -680,6 +680,28 @@ section {
     color: #005885;
 }
 
+/* Twitter color styling */
+.fab.fa-twitter {
+    color: #1da1f2 !important;
+}
+
+.social-link .fab.fa-twitter {
+    color: #1da1f2;
+}
+
+.social-link:hover .fab.fa-twitter {
+    color: #0d8bd9;
+}
+
+/* Twitter color in hero section */
+.btn-secondary .fab.fa-twitter {
+    color: #1da1f2;
+}
+
+.btn-secondary:hover .fab.fa-twitter {
+    color: #0d8bd9;
+}
+
 /* Footer */
 .footer {
     background: #2c3e50;

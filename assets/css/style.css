@@ -334,6 +334,13 @@ section {
     max-height: 500px;
     overflow-y: auto;
     padding-right: 10px;
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scrollable-news::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 
@@ -686,22 +693,21 @@ section {
     color: #005885;
 }
 
-/* X (formerly Twitter) color styling */
-.btn-secondary span[style*="font-weight: bold"] {
+/* X (formerly Twitter) color styling - make it black */
+.btn-secondary span[style*="font-weight: bold"],
+.social-link span[style*="font-weight: bold"],
+a[href*="x.com"] span[style*="font-weight: bold"],
+a[href*="twitter.com"] span[style*="font-weight: bold"],
+span[style*="font-weight: bold"] {
     color: #000000 !important;
 }
 
-.social-link span[style*="font-weight: bold"] {
-    color: #000000;
-}
-
-.social-link:hover span[style*="font-weight: bold"] {
-    color: #333333;
-}
-
-/* X color in hero section */
-.btn-secondary:hover span[style*="font-weight: bold"] {
-    color: #333333;
+.btn-secondary:hover span[style*="font-weight: bold"],
+.social-link:hover span[style*="font-weight: bold"],
+a[href*="x.com"]:hover span[style*="font-weight: bold"],
+a[href*="twitter.com"]:hover span[style*="font-weight: bold"],
+span[style*="font-weight: bold"]:hover {
+    color: #333333 !important;
 }
 
 /* Footer */

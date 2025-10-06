@@ -217,9 +217,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const newsItems = document.querySelectorAll('.news-item');
     
     if (yearSelector) {
-        yearSelector.addEventListener('change', (e) => {
-            const selectedYear = e.target.value;
-            
+        // Set default to 2025 (most recent year)
+        yearSelector.value = '2025';
+        
+        // Filter news items on page load
+        const filterNews = (selectedYear) => {
             newsItems.forEach(item => {
                 const itemYear = item.getAttribute('data-year');
                 
@@ -229,6 +231,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.classList.add('hidden');
                 }
             });
+        };
+        
+        // Initial filter with default year
+        filterNews('2025');
+        
+        yearSelector.addEventListener('change', (e) => {
+            const selectedYear = e.target.value;
+            filterNews(selectedYear);
         });
     }
 });
@@ -242,32 +252,40 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const formData = new FormData(contactForm);
-            const name = formData.get('name') || 'Anonymous';
-            const email = formData.get('email') || 'No email provided';
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-            
-            // Create mailto link
-            const mailtoLink = `mailto:ritvik.iitd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-            )}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            formStatus.textContent = 'Opening your email client... Please send the email to complete the process.';
+            // Show loading state
+            formStatus.textContent = 'Sending message...';
             formStatus.className = 'form-status success';
             formStatus.style.display = 'block';
             
-            // Reset form
-            contactForm.reset();
+            // Submit form to Formspree
+            const formData = new FormData(contactForm);
             
-            // Hide status message after 5 seconds
-            setTimeout(() => {
-                formStatus.style.display = 'none';
-            }, 5000);
+            fetch('https://formspree.io/f/xpzqkqkj', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+                    formStatus.className = 'form-status success';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                formStatus.textContent = 'Sorry, there was an error sending your message. Please try again or email me directly.';
+                formStatus.className = 'form-status error';
+            })
+            .finally(() => {
+                // Hide status message after 5 seconds
+                setTimeout(() => {
+                    formStatus.style.display = 'none';
+                }, 5000);
+            });
         });
     }
 });

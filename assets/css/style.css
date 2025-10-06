@@ -108,16 +108,34 @@ body {
     padding: 120px 0 80px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    text-align: center;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-right {
+    text-align: left;
 }
 
 .hero-image {
-    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-photo {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid rgba(255, 255, 255, 0.3);
@@ -195,6 +213,15 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.8);
     transform: translateY(-2px);
+}
+
+/* LinkedIn specific styling */
+.btn-secondary .fab.fa-linkedin {
+    color: #0077b5;
+}
+
+.btn-secondary:hover .fab.fa-linkedin {
+    color: #005885;
 }
 
 /* Section Styles */
@@ -340,12 +367,15 @@ section {
 /* News item visibility */
 .news-item {
     transition: opacity 0.3s ease, transform 0.3s ease;
+    display: block;
 }
 
 .news-item.hidden {
+    display: none !important;
     opacity: 0;
     transform: translateY(-10px);
     pointer-events: none;
+    visibility: hidden;
 }
 
 /* Publications Section */
@@ -639,6 +669,15 @@ section {
     transform: translateY(-2px);
 }
 
+/* LinkedIn color in contact section */
+.social-link .fab.fa-linkedin {
+    color: #0077b5;
+}
+
+.social-link:hover .fab.fa-linkedin {
+    color: #005885;
+}
+
 /* Footer */
 .footer {
     background: #2c3e50;
@@ -678,6 +717,16 @@ section {
         margin: 1rem 0;
     }
 
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero-right {
+        text-align: center;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
@@ -689,6 +738,11 @@ section {
     .hero-links {
         flex-direction: column;
         align-items: center;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
     }
 
     .section-title {
@@ -751,8 +805,8 @@ section {
     }
 
     .profile-photo {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
 }
 

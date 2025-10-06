@@ -341,15 +341,17 @@ section {
     position: absolute;
     left: 30px;
     top: 0;
-    bottom: 0;
     width: 2px;
     background: linear-gradient(to bottom, #3498db, #2980b9);
+    z-index: 1;
+    height: calc(100% - 2rem);
 }
 
 .news-item {
     position: relative;
     margin-bottom: 2rem;
     padding-left: 80px;
+    z-index: 2;
 }
 
 .news-item::before {
@@ -704,35 +706,35 @@ section {
     color: #005885;
 }
 
-/* Twitter color styling */
-.fab.fa-twitter,
-i.fab.fa-twitter {
+/* X (formerly Twitter) color styling */
+.fab.fa-x-twitter,
+i.fab.fa-x-twitter {
     color: #1da1f2 !important;
 }
 
-.social-link .fab.fa-twitter {
+.social-link .fab.fa-x-twitter {
     color: #1da1f2;
 }
 
-.social-link:hover .fab.fa-twitter {
+.social-link:hover .fab.fa-x-twitter {
     color: #0d8bd9;
 }
 
-/* Twitter color in hero section */
-.btn-secondary .fab.fa-twitter {
+/* X color in hero section */
+.btn-secondary .fab.fa-x-twitter {
     color: #1da1f2;
 }
 
-.btn-secondary:hover .fab.fa-twitter {
+.btn-secondary:hover .fab.fa-x-twitter {
     color: #0d8bd9;
 }
 
-/* Ensure all Twitter icons are blue */
-.fa-twitter {
+/* Ensure all X icons are blue */
+.fa-x-twitter {
     color: #1da1f2 !important;
 }
 
-.fa-twitter:hover {
+.fa-x-twitter:hover {
     color: #0d8bd9 !important;
 }
 
@@ -827,6 +829,7 @@ i.fab.fa-twitter {
 
     .news-timeline::before {
         left: 20px;
+        height: calc(100% - 2rem);
     }
 
     .news-item::before {

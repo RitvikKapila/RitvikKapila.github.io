@@ -707,7 +707,7 @@ span[style*="font-weight: bold"] {
 a[href*="x.com"]:hover span[style*="font-weight: bold"],
 a[href*="twitter.com"]:hover span[style*="font-weight: bold"],
 span[style*="font-weight: bold"]:hover {
-    color: #333333 !important;
+    color: #000000 !important;
 }
 
 /* Footer */

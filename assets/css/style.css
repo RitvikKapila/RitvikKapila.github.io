@@ -347,8 +347,22 @@ section {
 .news-item {
     position: relative;
     margin-bottom: 2rem;
-    padding-left: 0;
+    padding-left: 60px;
     z-index: 2;
+}
+
+.news-item::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    background-color: #3498db;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px #3498db;
+    z-index: 3;
 }
 
 

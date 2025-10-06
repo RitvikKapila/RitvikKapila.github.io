@@ -216,26 +216,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearSelector = document.getElementById('yearSelector');
     const newsItems = document.querySelectorAll('.news-item');
     
-    if (yearSelector) {
-        // Set default to 2025 (most recent year)
-        yearSelector.value = '2025';
-        
-        // Filter news items on page load
+    if (yearSelector && newsItems.length > 0) {
+        // Filter news items function
         const filterNews = (selectedYear) => {
             newsItems.forEach(item => {
                 const itemYear = item.getAttribute('data-year');
                 
                 if (selectedYear === 'all' || itemYear === selectedYear) {
+                    item.style.display = 'block';
                     item.classList.remove('hidden');
                 } else {
+                    item.style.display = 'none';
                     item.classList.add('hidden');
                 }
             });
         };
         
-        // Initial filter with default year
+        // Set default to 2025 and filter on page load
+        yearSelector.value = '2025';
         filterNews('2025');
         
+        // Add event listener for year changes
         yearSelector.addEventListener('change', (e) => {
             const selectedYear = e.target.value;
             filterNews(selectedYear);
@@ -249,43 +250,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const formStatus = document.getElementById('formStatus');
     
     if (contactForm) {
+        // Let the form submit naturally to Formspree
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
             // Show loading state
             formStatus.textContent = 'Sending message...';
             formStatus.className = 'form-status success';
             formStatus.style.display = 'block';
-            
-            // Submit form to Formspree
-            const formData = new FormData(contactForm);
-            
-            fetch('https://formspree.io/f/xpzqkqkj', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
-                    formStatus.className = 'form-status success';
-                    contactForm.reset();
-                } else {
-                    throw new Error('Network response was not ok');
-                }
-            })
-            .catch(error => {
+        });
+        
+        // Handle form submission success/error
+        contactForm.addEventListener('formspree', (e) => {
+            if (e.detail.success) {
+                formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+                formStatus.className = 'form-status success';
+                contactForm.reset();
+            } else {
                 formStatus.textContent = 'Sorry, there was an error sending your message. Please try again or email me directly.';
                 formStatus.className = 'form-status error';
-            })
-            .finally(() => {
-                // Hide status message after 5 seconds
-                setTimeout(() => {
-                    formStatus.style.display = 'none';
-                }, 5000);
-            });
+            }
+            
+            // Hide status message after 5 seconds
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 5000);
         });
     }
 });

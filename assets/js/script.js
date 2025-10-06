@@ -309,53 +309,6 @@ function testFilter() {
 }
 
 
-// Theme Toggle Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const body = document.body;
-    
-    // Get saved theme or default to 'default' (system)
-    const savedTheme = localStorage.getItem('theme') || 'default';
-    applyTheme(savedTheme);
-    updateThemeIcon(savedTheme);
-    
-    // Theme toggle event listener - cycles through: default -> light -> dark -> default
-    themeToggle.addEventListener('click', function() {
-        const currentTheme = body.getAttribute('data-theme') || 'default';
-        let newTheme;
-        
-        if (currentTheme === 'default') {
-            newTheme = 'light';
-        } else if (currentTheme === 'light') {
-            newTheme = 'dark';
-        } else {
-            newTheme = 'default';
-        }
-        
-        applyTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
-    
-    function applyTheme(theme) {
-        if (theme === 'default') {
-            body.removeAttribute('data-theme');
-        } else {
-            body.setAttribute('data-theme', theme);
-        }
-    }
-    
-    function updateThemeIcon(theme) {
-        if (theme === 'dark') {
-            themeIcon.className = 'fas fa-sun';
-        } else if (theme === 'light') {
-            themeIcon.className = 'fas fa-moon';
-        } else {
-            themeIcon.className = 'fas fa-desktop';
-        }
-    }
-});
 
 // Console welcome message
 console.log('%c👋 Welcome to Ritvik Kapila\'s Website!', 'color: #3498db; font-size: 16px; font-weight: bold;');

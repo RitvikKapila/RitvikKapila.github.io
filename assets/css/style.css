@@ -86,8 +86,8 @@ body {
 /* Floating Theme Toggle */
 .floating-theme-toggle {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     z-index: 1000;
 }
 
@@ -414,31 +414,49 @@ section {
 }
 
 .scrollable-news {
-    max-height: 500px;
-    overflow-y: auto;
-    padding-right: 10px;
+    max-height: 350px;
+    overflow-y: scroll;
+    padding-right: 20px;
     /* Custom scrollbar */
-    scrollbar-width: thin;
+    scrollbar-width: auto;
     scrollbar-color: var(--accent-color) var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    background: var(--card-bg);
+    box-shadow: 0 2px 10px var(--shadow);
 }
 
 .scrollable-news::-webkit-scrollbar {
-    width: 8px;
+    width: 14px;
+    background: var(--bg-secondary);
 }
 
 .scrollable-news::-webkit-scrollbar-track {
     background: var(--bg-secondary);
-    border-radius: 4px;
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
 }
 
 .scrollable-news::-webkit-scrollbar-thumb {
     background: var(--accent-color);
-    border-radius: 4px;
-    transition: background 0.3s ease;
+    border-radius: 7px;
+    border: 2px solid var(--bg-secondary);
+    min-height: 20px;
+    transition: all 0.3s ease;
 }
 
 .scrollable-news::-webkit-scrollbar-thumb:hover {
     background: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+.scrollable-news::-webkit-scrollbar-thumb:active {
+    background: var(--accent-hover);
+}
+
+.scrollable-news::-webkit-scrollbar-corner {
+    background: var(--bg-secondary);
 }
 
 
@@ -950,16 +968,25 @@ span[style*="font-weight: bold"]:hover {
         height: 200px;
     }
     
-    /* Mobile floating theme toggle */
+    /* Mobile floating buttons */
     .floating-theme-toggle {
-        bottom: 20px;
-        right: 20px;
+        bottom: 15px;
+        right: 15px;
     }
     
     .floating-theme-btn {
         width: 50px;
         height: 50px;
         font-size: 18px;
+    }
+    
+    /* Mobile scroll to top button */
+    .scroll-to-top {
+        bottom: 15px !important;
+        left: 15px !important;
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 16px !important;
     }
 }
 

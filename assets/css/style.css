@@ -681,7 +681,8 @@ section {
 }
 
 /* Twitter color styling */
-.fab.fa-twitter {
+.fab.fa-twitter,
+i.fab.fa-twitter {
     color: #1da1f2 !important;
 }
 
@@ -700,6 +701,15 @@ section {
 
 .btn-secondary:hover .fab.fa-twitter {
     color: #0d8bd9;
+}
+
+/* Ensure all Twitter icons are blue */
+.fa-twitter {
+    color: #1da1f2 !important;
+}
+
+.fa-twitter:hover {
+    color: #0d8bd9 !important;
 }
 
 /* Footer */

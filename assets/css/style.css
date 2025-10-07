@@ -845,8 +845,11 @@ span[style*="font-weight: bold"]:hover {
     }
 
     .hero-links {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
     }
 
     .profile-photo {
@@ -863,8 +866,11 @@ span[style*="font-weight: bold"]:hover {
     }
 
     .social-links {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 
     .contact-content {

@@ -879,7 +879,11 @@ span[style*="font-weight: bold"]:hover {
     }
 
     .news-item {
-        padding-left: 0;
+        padding-left: 40px;
+    }
+    
+    .news-item::before {
+        left: 15px;
     }
 
 

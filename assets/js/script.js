@@ -2,7 +2,7 @@
 const SITE_CONFIG = {
     title: "Ritvik Kapila",
     subtitle: "Building something new",
-    description: "IIT Delhi and UCSD graduate; Most recently, I was the head of data research at Essential AI, where I worked on building large scale data pipelines and evaluations for pre-training large language models. During my masters, I trained foundation models for time series data, and other scare data domains. Prior experience includes Amazon, and high frequency trading firms.",
+    description: "Former head of data research at Essential AI, where I worked on building large scale data pipelines and evaluations for pre-training large language models. IIT Delhi and UCSD graduate; During my masters, I trained foundation models for time series data, and other scare data domains. Prior experience includes Amazon, and high frequency trading firms.",
     organization: "Stealth Startup",
     url: "https://ritvikkapila.github.io/"
 };

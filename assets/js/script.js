@@ -1,3 +1,59 @@
+// Centralized Content Configuration
+const SITE_CONFIG = {
+    title: "Ritvik Kapila",
+    subtitle: "Building something new",
+    description: "IIT Delhi and UCSD graduate; Most recently, I was the head of data research at Essential AI. Worked on building large scale data pipelines and evaluations for pre-training large language models. During my masters, I worked on trained foundation models for time series data, and other scare data domains. Formerly worked at Amazon, and high frequency trading firms.",
+    organization: "Stealth Startup",
+    url: "https://ritvikkapila.github.io/"
+};
+
+// Function to update all description references
+function updateSiteContent() {
+    // Update meta tags
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+        metaDescription.setAttribute('content', SITE_CONFIG.description);
+    }
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+        ogDescription.setAttribute('content', SITE_CONFIG.description);
+    }
+    
+    const twitterDescription = document.querySelector('meta[property="twitter:description"]');
+    if (twitterDescription) {
+        twitterDescription.setAttribute('content', SITE_CONFIG.description);
+    }
+    
+    // Update JSON-LD structured data
+    const jsonLdScript = document.querySelector('script[type="application/ld+json"]');
+    if (jsonLdScript) {
+        try {
+            const jsonLd = JSON.parse(jsonLdScript.textContent);
+            jsonLd.description = SITE_CONFIG.description;
+            jsonLd.jobTitle = SITE_CONFIG.subtitle;
+            jsonLd.worksFor.name = SITE_CONFIG.organization;
+            jsonLdScript.textContent = JSON.stringify(jsonLd, null, 4);
+        } catch (e) {
+            console.error('Error updating JSON-LD:', e);
+        }
+    }
+    
+    // Update hero section
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle) {
+        heroSubtitle.textContent = SITE_CONFIG.subtitle;
+    }
+    
+    const heroDescription = document.querySelector('.hero-description');
+    if (heroDescription) {
+        heroDescription.textContent = SITE_CONFIG.description;
+    }
+}
+
+// Initialize content updates when DOM is loaded
+document.addEventListener('DOMContentLoaded', updateSiteContent);
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');

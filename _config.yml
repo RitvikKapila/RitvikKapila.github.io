@@ -1,6 +1,6 @@
 # Site settings
 title: Ritvik Kapila
-description: ML Researcher at Essential AI
+description: Building something new
 author: Ritvik Kapila
 email: ritvik.iitd@gmail.com
 url: https://ritvik-kapila.github.io
@@ -65,12 +65,12 @@ include:
 seo:
   type: Person
   name: Ritvik Kapila
-  job_title: ML Researcher
-  organization: Essential AI
+  job_title: Building something new
+  organization: Stealth Startup
   url: https://ritvik-kapila.github.io
-  image: /assets/images/profile.jpg
+  image: /assets/images/RitvikKapila.png
   social:
-    google_scholar: https://scholar.google.com
-    linkedin: https://linkedin.com
-    github: https://github.com
-    twitter: https://twitter.com
+    google_scholar: https://scholar.google.com/citations?user=vTYNQkwAAAAJ
+    linkedin: https://linkedin.com/in/ritvik-kapila
+    github: https://github.com/RitvikKapila
+    twitter: https://twitter.com/RitvikKapila

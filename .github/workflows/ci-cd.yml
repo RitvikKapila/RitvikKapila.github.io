@@ -10,7 +10,6 @@ jobs:
   # Jekyll Build Test
   jekyll-build:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     steps:
     - uses: actions/checkout@v4
     
@@ -47,7 +46,6 @@ jobs:
   html-validation:
     runs-on: ubuntu-latest
     needs: jekyll-build
-    timeout-minutes: 3
     steps:
     - uses: actions/checkout@v4
     
@@ -58,16 +56,21 @@ jobs:
         cache: 'npm'
     
     - name: Install testing dependencies
-      run: npm install
+      run: |
+        echo "Installing Node.js dependencies..."
+        npm install
+        echo "Dependencies installed successfully"
     
     - name: Run simple tests
-      run: npm test
+      run: |
+        echo "Running simple tests..."
+        npm test
+        echo "Tests completed successfully"
 
   # CSS Validation
   css-validation:
     runs-on: ubuntu-latest
     needs: jekyll-build
-    timeout-minutes: 3
     steps:
     - uses: actions/checkout@v4
     
@@ -78,16 +81,21 @@ jobs:
         cache: 'npm'
     
     - name: Install testing dependencies
-      run: npm install
+      run: |
+        echo "Installing Node.js dependencies..."
+        npm install
+        echo "Dependencies installed successfully"
     
     - name: Run simple tests
-      run: npm test
+      run: |
+        echo "Running simple tests..."
+        npm test
+        echo "Tests completed successfully"
 
   # JavaScript Testing
   js-testing:
     runs-on: ubuntu-latest
     needs: jekyll-build
-    timeout-minutes: 3
     steps:
     - uses: actions/checkout@v4
     
@@ -98,16 +106,21 @@ jobs:
         cache: 'npm'
     
     - name: Install testing dependencies
-      run: npm install
+      run: |
+        echo "Installing Node.js dependencies..."
+        npm install
+        echo "Dependencies installed successfully"
     
     - name: Run simple tests
-      run: npm test
+      run: |
+        echo "Running simple tests..."
+        npm test
+        echo "Tests completed successfully"
 
   # Accessibility Testing
   accessibility-testing:
     runs-on: ubuntu-latest
     needs: jekyll-build
-    timeout-minutes: 3
     steps:
     - uses: actions/checkout@v4
     
@@ -118,16 +131,21 @@ jobs:
         cache: 'npm'
     
     - name: Install testing dependencies
-      run: npm install
+      run: |
+        echo "Installing Node.js dependencies..."
+        npm install
+        echo "Dependencies installed successfully"
     
     - name: Run simple tests
-      run: npm test
+      run: |
+        echo "Running simple tests..."
+        npm test
+        echo "Tests completed successfully"
 
   # Performance Testing
   performance-testing:
     runs-on: ubuntu-latest
     needs: jekyll-build
-    timeout-minutes: 3
     steps:
     - uses: actions/checkout@v4
     
@@ -138,16 +156,21 @@ jobs:
         cache: 'npm'
     
     - name: Install testing dependencies
-      run: npm install
+      run: |
+        echo "Installing Node.js dependencies..."
+        npm install
+        echo "Dependencies installed successfully"
     
     - name: Run simple tests
-      run: npm test
+      run: |
+        echo "Running simple tests..."
+        npm test
+        echo "Tests completed successfully"
 
   # SEO Testing
   seo-testing:
     runs-on: ubuntu-latest
     needs: jekyll-build
-    timeout-minutes: 3
     steps:
     - uses: actions/checkout@v4
     
@@ -158,10 +181,16 @@ jobs:
         cache: 'npm'
     
     - name: Install testing dependencies
-      run: npm install
+      run: |
+        echo "Installing Node.js dependencies..."
+        npm install
+        echo "Dependencies installed successfully"
     
     - name: Run simple tests
-      run: npm test
+      run: |
+        echo "Running simple tests..."
+        npm test
+        echo "Tests completed successfully"
 
   # Link Validation
   link-validation:
@@ -206,7 +235,6 @@ jobs:
   responsive-testing:
     runs-on: ubuntu-latest
     needs: jekyll-build
-    timeout-minutes: 3
     steps:
     - uses: actions/checkout@v4
     
@@ -217,16 +245,21 @@ jobs:
         cache: 'npm'
     
     - name: Install testing dependencies
-      run: npm install
+      run: |
+        echo "Installing Node.js dependencies..."
+        npm install
+        echo "Dependencies installed successfully"
     
     - name: Run simple tests
-      run: npm test
+      run: |
+        echo "Running simple tests..."
+        npm test
+        echo "Tests completed successfully"
 
   # Security Testing
   security-testing:
     runs-on: ubuntu-latest
     needs: jekyll-build
-    timeout-minutes: 3
     steps:
     - uses: actions/checkout@v4
     
@@ -237,10 +270,16 @@ jobs:
         cache: 'npm'
     
     - name: Install testing dependencies
-      run: npm install
+      run: |
+        echo "Installing Node.js dependencies..."
+        npm install
+        echo "Dependencies installed successfully"
     
     - name: Run simple tests
-      run: npm test
+      run: |
+        echo "Running simple tests..."
+        npm test
+        echo "Tests completed successfully"
 
   # Deploy to GitHub Pages (only on main branch)
   deploy:

@@ -53,7 +53,8 @@ body {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, transform 0.3s ease;
+    transform: translateY(0);
 }
 
 .nav-container {

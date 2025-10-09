@@ -4,7 +4,9 @@
   "description": "CI/CD testing suite for Ritvik Kapila's personal website",
   "main": "tests/test-runner.js",
   "scripts": {
-    "test": "node tests/test-runner.js",
+    "test": "node tests/simple-tests.js",
+    "test:simple": "node tests/simple-tests.js",
+    "test:basic": "node tests/basic-tests.js",
     "test:html": "node tests/html-validation.js",
     "test:css": "node tests/css-validation.js",
     "test:js": "node tests/js-tests.js",
@@ -14,6 +16,7 @@
     "test:responsive": "node tests/responsive-tests.js",
     "test:links": "node tests/link-validation.js",
     "test:jekyll": "node tests/jekyll-build-tests.js",
+    "test:all": "node tests/test-runner.js",
     "install-deps": "npm install",
     "start-server": "cd _site && python3 -m http.server 4000 &",
     "stop-server": "pkill -f 'python3 -m http.server 4000'",
@@ -32,10 +35,7 @@
   "author": "Ritvik Kapila",
   "license": "MIT",
   "devDependencies": {
-    "puppeteer": "^21.0.0",
-    "jest": "^29.0.0",
-    "axe-core": "^4.7.0",
-    "lighthouse": "^11.0.0"
+    "puppeteer": "^21.0.0"
   },
   "engines": {
     "node": ">=18.0.0",

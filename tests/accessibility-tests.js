@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-const axe = require('axe-core');
 
 // Accessibility testing suite
 class AccessibilityTester {
@@ -43,8 +42,8 @@ class AccessibilityTester {
       page = await browser.newPage();
       await page.goto('http://localhost:4000', { waitUntil: 'networkidle0' });
       
-      // Inject axe-core
-      await page.addScriptTag({ path: require.resolve('axe-core') });
+      // Inject axe-core from CDN
+      await page.addScriptTag({ url: 'https://unpkg.com/axe-core@4.7.0/axe.min.js' });
       
       // Run all accessibility tests
       await this.testWCAGCompliance(page);

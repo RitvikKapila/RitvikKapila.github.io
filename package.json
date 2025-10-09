@@ -1,0 +1,52 @@
+{
+  "name": "ritvik-kapila-website-tests",
+  "version": "1.0.0",
+  "description": "CI/CD testing suite for Ritvik Kapila's personal website",
+  "main": "tests/test-runner.js",
+  "scripts": {
+    "test": "node tests/test-runner.js",
+    "test:html": "node tests/html-validation.js",
+    "test:css": "node tests/css-validation.js",
+    "test:js": "node tests/js-tests.js",
+    "test:accessibility": "node tests/accessibility-tests.js",
+    "test:performance": "node tests/performance-tests.js",
+    "test:seo": "node tests/seo-tests.js",
+    "test:responsive": "node tests/responsive-tests.js",
+    "test:links": "node tests/link-validation.js",
+    "test:jekyll": "node tests/jekyll-build-tests.js",
+    "install-deps": "npm install",
+    "start-server": "cd _site && python3 -m http.server 4000 &",
+    "stop-server": "pkill -f 'python3 -m http.server 4000'",
+    "build-jekyll": "bundle exec jekyll build",
+    "serve-jekyll": "bundle exec jekyll serve --port 4000 --host 0.0.0.0"
+  },
+  "keywords": [
+    "testing",
+    "ci-cd",
+    "accessibility",
+    "performance",
+    "seo",
+    "website",
+    "jekyll"
+  ],
+  "author": "Ritvik Kapila",
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer": "^21.0.0",
+    "jest": "^29.0.0",
+    "axe-core": "^4.7.0",
+    "lighthouse": "^11.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ritvik-kapila/ritvik-kapila.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ritvik-kapila/ritvik-kapila.github.io/issues"
+  },
+  "homepage": "https://ritvik-kapila.github.io"
+}

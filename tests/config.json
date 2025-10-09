@@ -1,0 +1,47 @@
+{
+  "testConfig": {
+    "baseUrl": "http://localhost:4000",
+    "timeout": 30000,
+    "retries": 2,
+    "parallel": false,
+    "headless": true,
+    "viewport": {
+      "mobile": { "width": 375, "height": 667 },
+      "tablet": { "width": 768, "height": 1024 },
+      "desktop": { "width": 1200, "height": 800 }
+    },
+    "performance": {
+      "maxLoadTime": 3000,
+      "maxDOMContentLoaded": 2000,
+      "maxFirstContentfulPaint": 1500,
+      "maxPageSize": 2097152,
+      "maxResourceCount": 50
+    },
+    "accessibility": {
+      "wcagLevel": "AA",
+      "maxViolations": 0,
+      "maxIncomplete": 5
+    },
+    "seo": {
+      "minTitleLength": 30,
+      "maxTitleLength": 60,
+      "minDescriptionLength": 120,
+      "maxDescriptionLength": 160,
+      "minContentWords": 100
+    },
+    "responsive": {
+      "breakpoints": [320, 375, 768, 1024, 1200, 1440],
+      "maxHorizontalScroll": 0
+    }
+  },
+  "ci": {
+    "failOnWarnings": false,
+    "generateReport": true,
+    "reportFormat": "json",
+    "artifacts": {
+      "screenshots": true,
+      "videos": false,
+      "logs": true
+    }
+  }
+}

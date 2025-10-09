@@ -34,9 +34,7 @@
   ],
   "author": "Ritvik Kapila",
   "license": "MIT",
-  "devDependencies": {
-    "puppeteer": "^21.0.0"
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=8.0.0"

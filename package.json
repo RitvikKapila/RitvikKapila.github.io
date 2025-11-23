@@ -20,6 +20,7 @@
     "install-deps": "npm install",
     "start-server": "cd _site && python3 -m http.server 4000 &",
     "stop-server": "pkill -f 'python3 -m http.server 4000'",
+    "dev": "bundle exec jekyll serve --port 4000 --host 0.0.0.0",
     "build-jekyll": "bundle exec jekyll build",
     "serve-jekyll": "bundle exec jekyll serve --port 4000 --host 0.0.0.0"
   },

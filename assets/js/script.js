@@ -2,7 +2,7 @@
 const SITE_CONFIG = {
     title: "Ritvik Kapila",
     subtitle: "Building something new",
-    description: "Former head of data research at Essential AI, where I built large scale data pipelines and evaluations for pre-training large language models. IIT Delhi and UCSD graduate. Prior experience includes data research at Amazon, and high frequency trading firms.",
+    description: "Most recently, data research @ Essential AI, where I built large scale data pipelines and evaluations for pre-training large language models. IIT Delhi and UCSD graduate. Prior experience includes data research at Amazon, and high frequency trading firms.",
     organization: "Stealth Startup",
     url: "https://ritvikkapila.github.io/"
 };
@@ -14,17 +14,17 @@ function updateSiteContent() {
     if (metaDescription) {
         metaDescription.setAttribute('content', SITE_CONFIG.description);
     }
-    
+
     const ogDescription = document.querySelector('meta[property="og:description"]');
     if (ogDescription) {
         ogDescription.setAttribute('content', SITE_CONFIG.description);
     }
-    
+
     const twitterDescription = document.querySelector('meta[property="twitter:description"]');
     if (twitterDescription) {
         twitterDescription.setAttribute('content', SITE_CONFIG.description);
     }
-    
+
     // Update JSON-LD structured data
     const jsonLdScript = document.querySelector('script[type="application/ld+json"]');
     if (jsonLdScript) {
@@ -38,13 +38,13 @@ function updateSiteContent() {
             console.error('Error updating JSON-LD:', e);
         }
     }
-    
+
     // Update hero section
     const heroSubtitle = document.querySelector('.hero-subtitle');
     if (heroSubtitle) {
         heroSubtitle.textContent = SITE_CONFIG.subtitle;
     }
-    
+
     const heroDescription = document.querySelector('.hero-description');
     if (heroDescription) {
         heroDescription.textContent = SITE_CONFIG.description;
@@ -91,7 +91,7 @@ let ticking = false;
 function updateNavbar() {
     const navbar = document.querySelector('.navbar');
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
+
     // Background change
     if (scrollTop > 50) {
         navbar.style.background = 'rgba(255, 255, 255, 0.98)';
@@ -100,7 +100,7 @@ function updateNavbar() {
         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
         navbar.style.boxShadow = 'none';
     }
-    
+
     // Hide/show navbar based on scroll direction
     if (scrollTop > lastScrollTop && scrollTop > 100) {
         // Scrolling down - hide navbar
@@ -109,7 +109,7 @@ function updateNavbar() {
         // Scrolling up - show navbar
         navbar.style.transform = 'translateY(0)';
     }
-    
+
     lastScrollTop = scrollTop;
     ticking = false;
 }
@@ -163,7 +163,7 @@ const observer = new IntersectionObserver((entries) => {
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll('.news-item, .publication-item, .teaching-item, .scholarship-item');
-    
+
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
-    
+
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -184,7 +184,7 @@ function typeWriter(element, text, speed = 100) {
             setTimeout(type, speed);
         }
     }
-    
+
     type();
 }
 
@@ -249,9 +249,9 @@ document.addEventListener('DOMContentLoaded', () => {
         opacity: 0;
         visibility: hidden;
     `;
-    
+
     document.body.appendChild(scrollToTopBtn);
-    
+
     // Show/hide scroll to top button
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
@@ -262,15 +262,15 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollToTopBtn.style.visibility = 'hidden';
         }
     });
-    
+
     scrollToTopBtn.addEventListener('click', scrollToTop);
-    
+
     // Hover effects
     scrollToTopBtn.addEventListener('mouseenter', () => {
         scrollToTopBtn.style.transform = 'translateY(-3px)';
         scrollToTopBtn.style.boxShadow = '0 6px 20px rgba(52, 152, 219, 0.4)';
     });
-    
+
     scrollToTopBtn.addEventListener('mouseleave', () => {
         scrollToTopBtn.style.transform = 'translateY(0)';
         scrollToTopBtn.style.boxShadow = '0 4px 12px rgba(52, 152, 219, 0.3)';
@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
+
     images.forEach(img => imageObserver.observe(img));
 });
 
@@ -300,20 +300,20 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         const yearSelector = document.getElementById('yearSelector');
         const newsItems = document.querySelectorAll('.news-item');
-        
+
         console.log('Year selector found:', !!yearSelector);
         console.log('News items found:', newsItems.length);
-        
+
         if (yearSelector && newsItems.length > 0) {
             // Filter news items function
             const filterNews = (selectedYear) => {
                 console.log('Filtering for year:', selectedYear);
                 let visibleCount = 0;
-                
+
                 newsItems.forEach((item, index) => {
                     const itemYear = item.getAttribute('data-year');
                     console.log(`Item ${index}: year=${itemYear}, selected=${selectedYear}`);
-                    
+
                     if (selectedYear === 'all' || itemYear === selectedYear) {
                         item.style.display = 'block';
                         item.style.visibility = 'visible';
@@ -327,14 +327,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         console.log(`Hiding item ${index} for year ${itemYear}`);
                     }
                 });
-                
+
                 console.log(`Total visible items: ${visibleCount}`);
             };
-            
+
             // Set default to 2025 and filter on page load
             yearSelector.value = '2025';
             filterNews('2025');
-            
+
             // Add event listener for year changes
             yearSelector.addEventListener('change', (e) => {
                 const selectedYear = e.target.value;
@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
-    
+
     if (contactForm) {
         // Let the form submit naturally to Formspree
         contactForm.addEventListener('submit', (e) => {
@@ -360,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formStatus.className = 'form-status success';
             formStatus.style.display = 'block';
         });
-        
+
         // Handle form submission success/error
         contactForm.addEventListener('formspree', (e) => {
             if (e.detail.success) {
@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 formStatus.textContent = 'Sorry, there was an error sending your message. Please try again or email me directly.';
                 formStatus.className = 'form-status error';
             }
-            
+
             // Hide status message after 5 seconds
             setTimeout(() => {
                 formStatus.style.display = 'none';

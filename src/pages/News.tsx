@@ -5,38 +5,36 @@ import { ArrowLeft } from "../components/Icons"
 export default function NewsPage() {
   return (
     <div className="animate-fade-in">
-      <div className="max-w-[680px] mx-auto px-6 py-16 md:py-24">
-        {/* Back link */}
+      <div className="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-24">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12 group"
+          className="inline-flex items-center gap-2 text-sm font-medium text-foreground/60 hover:text-foreground transition-colors mb-12 group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
-          Home
+          Back to home
         </Link>
 
         {/* Header */}
-        <header className="mb-12 animate-slide-up">
-          <h1 className="text-2xl font-semibold tracking-tight mb-2">News</h1>
-          <p className="text-muted-foreground text-sm">
-            Updates and announcements.
-          </p>
+        <header className="mb-16 md:mb-20 animate-slide-up">
+          <p className="text-xs font-semibold text-foreground/60 uppercase tracking-widest mb-3">Timeline</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
+            News & Updates
+          </h1>
+          <p className="text-lg text-foreground/70 font-light">Recent milestones, announcements, and career updates.</p>
         </header>
 
-        {/* News List */}
-        <div className="space-y-0">
+        {/* News List with improved styling */}
+        <div className="space-y-px">
           {news.map((n, idx) => (
-            <div 
-              key={idx} 
-              className="flex gap-6 py-4 border-b border-border last:border-0 hover:bg-muted/30 -mx-3 px-3 rounded-lg transition-all duration-200 animate-slide-up"
-              style={{ animationDelay: `${(idx + 1) * 50}ms` }}
+            <div
+              key={idx}
+              className="group flex gap-6 md:gap-8 py-5 md:py-6 px-4 md:px-5 rounded-lg hover:bg-muted/30 transition-all duration-200 border border-border/50 hover:border-foreground/20 animate-slide-up"
+              style={{ animationDelay: `${(idx + 1) * 25}ms` }}
             >
-              <div className="w-24 shrink-0 text-sm text-muted-foreground font-mono">
-                {n.date}
-              </div>
-              <div 
-                className="flex-1 text-foreground/90 leading-[1.7] news-content"
-                dangerouslySetInnerHTML={{ __html: n.content }} 
+              <div className="w-28 md:w-32 shrink-0 text-xs font-mono text-foreground/50 pt-0.5">{n.date}</div>
+              <div
+                className="flex-1 text-sm text-foreground/80 leading-relaxed news-content"
+                dangerouslySetInnerHTML={{ __html: n.content }}
               />
             </div>
           ))}

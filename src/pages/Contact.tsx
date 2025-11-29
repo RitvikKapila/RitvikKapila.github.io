@@ -83,12 +83,14 @@ export default function ContactPage() {
           {/* Left: Contact Info */}
           <section className="animate-slide-up">
             <p className="text-xs font-semibold text-foreground/60 uppercase tracking-widest mb-3">Contact</p>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight mb-8">
               Let's connect
             </h1>
             <p className="text-lg text-foreground/70 leading-relaxed mb-10">
-              Have a question, idea, or just want to chat? I'd love to hear from you. Drop me a message and I'll get
-              back to you as soon as possible.
+             Have a question, idea, or just want to chat? I'd love to hear from you. Drop me a message and I'll get back to you as soon as possible.
+            </p>
+            <p className="text-md text-foreground/70 leading-relaxed mb-10">
+              If you want to leave me anonymous feedback, the form accepts responses without your name and email. Cheers!
             </p>
 
             {/* Contact methods */}

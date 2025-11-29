@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import news from "../data/news"
-import { ArrowLeft } from "../components/Icons"
+import { ArrowLeft, Mail } from "../components/Icons"
 
 export default function NewsPage() {
   return (
@@ -17,9 +17,7 @@ export default function NewsPage() {
         {/* Header */}
         <header className="mb-16 md:mb-20 animate-slide-up">
           <p className="text-xs font-semibold text-foreground/60 uppercase tracking-widest mb-3">Timeline</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
-            News & Updates
-          </h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight mb-4">News</h1>
           <p className="text-lg text-foreground/70 font-light">Recent milestones, announcements, and career updates.</p>
         </header>
 
@@ -38,6 +36,24 @@ export default function NewsPage() {
               />
             </div>
           ))}
+        </div>
+
+        <div
+          className="mt-20 md:mt-24 pt-16 md:pt-20 border-t border-border animate-slide-up"
+          style={{ animationDelay: "200ms" }}
+        >
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <p className="text-lg md:text-xl text-foreground/80 font-medium max-w-2xl">
+              Interested in collaborating or want to chat?
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-foreground text-background font-medium text-sm hover:bg-foreground/90 transition-all duration-200 group whitespace-nowrap shadow-sm hover:shadow-md"
+            >
+              <Mail className="w-4 h-4" />
+              Get in Touch
+            </Link>
+          </div>
         </div>
       </div>
     </div>

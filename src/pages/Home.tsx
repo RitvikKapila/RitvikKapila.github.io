@@ -1,34 +1,14 @@
-"use client"
-
-import { useState } from "react"
+import { Link } from "react-router-dom"
 import news from "../data/news"
-import { ChevronRight, Mail } from "../components/Icons"
+import { ChevronRight } from "../components/Icons"
 
 export default function Home() {
-  const [showAll, setShowAll] = useState(false)
-
   return (
     <div className="animate-fade-in">
       <main className="w-full">
         <div className="max-w-5xl mx-auto px-6 md:px-8 py-16 md:py-24">
-          {/* Hero Section */}
-          <section className="mb-2 md:mb-4  animate-slide-up">
-            <div className="space-y-6 md:space-y-8">
-              <div>
-                <p className="text-xs font-semibold text-foreground/60 uppercase tracking-widest mb-4">Welcome</p>
-                <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight tracking-tight">
-                  Hi there, I'm Ritvik 👋
-                </h1>
-              </div>
-              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed max-w-3xl font-light">
-                Founder of NeoSigma. Previously built data systems at Essential AI, encryption libraries at AWS, and
-                researched ML/Privacy at UC San Diego.
-              </p>
-            </div>
-          </section>
+         
 
-          {/* Divider */}
-          <div className="h-px bg-border mb-8 md:mb-10" />
 
           {/* About Section - No Grid Layout */}
           <section className="mb-2 md:mb-4 animate-slide-up" style={{ animationDelay: "50ms" }}>
@@ -128,20 +108,20 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-0 mb-12 md:mb-16">
               <div>
                 <p className="text-xs font-semibold text-foreground/60 uppercase tracking-widest mb-3">Timeline</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">Latest Updates</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground">News</h2>
               </div>
-              <button
-                onClick={() => setShowAll((s) => !s)}
+              <Link
+                to="/news"
                 className="inline-flex items-center gap-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200 group whitespace-nowrap"
               >
-                {showAll ? "Show less" : "View all"}
+                View all
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
+              </Link>
             </div>
 
             {/* News items with better styling */}
             <div className="space-y-px">
-              {(showAll ? news : news.slice(0, 6)).map((n, idx) => (
+              {news.slice(0, 6).map((n, idx) => (
                 <div
                   key={idx}
                   className="group flex gap-6 md:gap-8 py-5 md:py-6 px-4 md:px-5 rounded-lg hover:bg-muted/30 transition-all duration-200 border border-border/50 hover:border-foreground/20 animate-slide-up"
@@ -157,27 +137,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* CTA Section */}
-          <div
-            className="mt-20 md:mt-24 pt-16 md:pt-20 border-t border-border animate-slide-up"
-            style={{ animationDelay: "200ms" }}
-          >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-              <div>
-                <p className="text-xs font-semibold text-foreground/60 uppercase tracking-widest mb-3">Connect</p>
-                <p className="text-xl md:text-2xl text-foreground font-medium max-w-2xl">
-                  Interested in collaborating or want to chat?
-                </p>
-              </div>
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-foreground text-background font-medium text-sm hover:bg-foreground/90 transition-all duration-200 group whitespace-nowrap shadow-sm hover:shadow-md"
-              >
-                <Mail className="w-4 h-4" />
-                Get in Touch
-              </a>
-            </div>
-          </div>
+         
         </div>
       </main>
     </div>

@@ -137,6 +137,23 @@ export default function Home() {
             </div>
           </section>
 
+          <div
+          className="mt-20 md:mt-24 pt-16 md:pt-20 border-t border-border animate-slide-up"
+          style={{ animationDelay: "200ms" }}
+        >
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <p className="text-lg md:text-xl text-foreground/80 font-medium max-w-2xl">
+              Interested in collaborating or want to chat?
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-foreground text-background font-medium text-sm hover:bg-foreground/90 transition-all duration-200 group whitespace-nowrap shadow-sm hover:shadow-md"
+            >
+              Get in Touch
+            </Link>
+          </div>
+        </div>
+
          
         </div>
       </main>

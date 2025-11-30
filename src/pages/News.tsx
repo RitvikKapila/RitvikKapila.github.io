@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import news from "../data/news"
-import { ArrowLeft, Mail } from "../components/Icons"
+import { ArrowLeft } from "../components/Icons"
 
 export default function NewsPage() {
   return (
@@ -50,7 +50,6 @@ export default function NewsPage() {
               to="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-foreground text-background font-medium text-sm hover:bg-foreground/90 transition-all duration-200 group whitespace-nowrap shadow-sm hover:shadow-md"
             >
-              <Mail className="w-4 h-4" />
               Get in Touch
             </Link>
           </div>

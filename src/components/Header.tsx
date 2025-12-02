@@ -10,7 +10,7 @@ export default function Header() {
           <Link to="/" className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white transition-opacity hover:opacity-70">
             Ritvik Kapila
           </Link>
-          <div className="hidden md:flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500">
+          <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500">
             <span>|</span>
             <span>Founder</span>
             <a

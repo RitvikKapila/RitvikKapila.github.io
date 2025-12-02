@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
+import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import ThemeToggleFixed from "./components/ThemeToggle";
 import Home from "./pages/Home";
@@ -11,11 +12,12 @@ function App() {
     <ThemeProvider>
       <BrowserRouter>
         <div className="flex min-h-screen bg-background text-foreground transition-colors duration-300">
+          <Header />
           <Sidebar />
 
           <ThemeToggleFixed />
 
-          <main className="flex-1 ml-0 md:ml-[33.333%]">
+          <main className="flex-1 ml-0 md:ml-[33.333%] pt-20">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/news" element={<NewsPage />} />

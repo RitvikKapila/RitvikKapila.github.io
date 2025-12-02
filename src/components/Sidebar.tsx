@@ -28,11 +28,11 @@ export default function Sidebar() {
       {/* Profile Image */}
       <div className="shrink-0 mb-4 md:mb-6">
         <div className="w-full max-w-xs md:max-w-sm mx-auto">
-          <div className="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-900 shadow-xl ring-1 ring-gray-200 dark:ring-gray-800">
+          <div className="rounded-2xl overflow-hidden">
             <img
               src="/assets/images/profile.webp"
               alt="Ritvik Kapila"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              className="w-full h-full object-cover"
               loading="lazy"
             />
           </div>
@@ -40,17 +40,17 @@ export default function Sidebar() {
       </div>
 
       {/* Social Links - Vertical Layout */}
-      <div className="flex flex-col gap-2 md:gap-2.5 max-w-xs md:max-w-sm mx-auto w-full">
-        <div className="flex flex-col gap-2 md:gap-2.5 max-w-xs md:max-w-sm mx-auto w-full">
+      <div className="flex flex-col gap-3 md:gap-4 max-w-xs md:max-w-sm mx-auto w-full">
+        <div className="flex flex-col gap-3 md:gap-4 max-w-xs md:max-w-sm mx-auto w-full">
           {socialLinks.map((link) => {
             const Icon = link.icon;
             if (!link.href) {
               return (
                 <div
                   key={link.label}
-                  className="flex items-center gap-2.5 text-xs text-gray-600 dark:text-gray-400 px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-900"
+                  className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"
                 >
-                  <Icon className="w-3.5 h-3.5 shrink-0" />
+                  <Icon className="w-4 h-4 shrink-0" />
                   <span>{link.label}</span>
                 </div>
               );
@@ -61,10 +61,10 @@ export default function Sidebar() {
                 href={link.href}
                 target={link.href.startsWith("mailto:") ? undefined : "_blank"}
                 rel="noreferrer"
-                className="flex items-center gap-2.5 text-xs text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-200"
+                className="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300"
                 title={link.label}
               >
-                <Icon className="w-3.5 h-3.5 shrink-0" />
+                <Icon className="w-4 h-4 shrink-0" />
                 <span>{link.label}</span>
               </a>
             );

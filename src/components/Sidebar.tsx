@@ -24,10 +24,10 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="fixed left-0 top-20 h-[calc(100vh-5rem)] w-full md:w-1/3 bg-white dark:bg-gray-950 overflow-hidden flex flex-col justify-center z-40 md:z-auto px-6 md:px-8">
+    <aside className="hidden md:flex fixed left-0 top-16 md:top-20 h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] w-full md:w-1/3 bg-white dark:bg-gray-950 overflow-hidden flex-col justify-center z-40 md:z-auto px-6 md:px-8">
       {/* Profile Image */}
-      <div className="shrink-0 mb-6">
-        <div className="w-full max-w-sm mx-auto">
+      <div className="shrink-0 mb-4 md:mb-6">
+        <div className="w-full max-w-xs md:max-w-sm mx-auto">
           <div className="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-900 shadow-xl ring-1 ring-gray-200 dark:ring-gray-800">
             <img
               src="/assets/images/profile.webp"
@@ -40,8 +40,8 @@ export default function Sidebar() {
       </div>
 
       {/* Social Links - Vertical Layout */}
-      <div className="flex flex-col gap-2.5 max-w-sm mx-auto w-full">
-        <div className="flex flex-col gap-2.5 max-w-sm mx-auto w-full">
+      <div className="flex flex-col gap-2 md:gap-2.5 max-w-xs md:max-w-sm mx-auto w-full">
+        <div className="flex flex-col gap-2 md:gap-2.5 max-w-xs md:max-w-sm mx-auto w-full">
           {socialLinks.map((link) => {
             const Icon = link.icon;
             if (!link.href) {

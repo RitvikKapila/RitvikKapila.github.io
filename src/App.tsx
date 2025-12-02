@@ -17,7 +17,7 @@ function App() {
 
           <ThemeToggleFixed />
 
-          <main className="flex-1 ml-0 md:ml-[33.333%] pt-20">
+          <main className="flex-1 w-full md:ml-[33.333%] pt-16 md:pt-20">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/news" element={<NewsPage />} />

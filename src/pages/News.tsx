@@ -26,10 +26,10 @@ export default function NewsPage() {
           {news.map((n, idx) => (
             <div
               key={idx}
-              className="group flex gap-6 md:gap-8 py-5 md:py-6 px-4 md:px-5 rounded-lg hover:bg-muted/30 transition-all duration-200 border border-border/50 hover:border-foreground/20 animate-slide-up"
+              className="group flex gap-3 md:gap-8 py-5 md:py-6 px-4 md:px-5 rounded-lg hover:bg-muted/30 transition-all duration-200 border border-border/50 hover:border-foreground/20 animate-slide-up"
               style={{ animationDelay: `${(idx + 1) * 25}ms` }}
             >
-              <div className="w-28 md:w-32 shrink-0 text-xs font-mono text-foreground/50 pt-0.5">{n.date}</div>
+              <div className="w-20 md:w-32 shrink-0 text-xs font-mono text-foreground/50 pt-0.5">{n.date}</div>
               <div
                 className="flex-1 text-sm text-foreground/80 leading-relaxed news-content"
                 dangerouslySetInnerHTML={{ __html: n.content }}

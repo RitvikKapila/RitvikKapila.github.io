@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Light mode - Elegant and minimal */
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: #f8f8f8;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+  --primary: #0a0a0a;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f0f0;
+  --secondary-foreground: #0a0a0a;
+  --muted: #f0f0f0;
+  --muted-foreground: #737373;
+  --accent: #e5e5e5;
+  --accent-foreground: #0a0a0a;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e5e5;
+  --input: #f5f5f5;
+  --ring: #0a0a0a;
+
+  /* Sidebar variables - Light */
+  --sidebar: #fafafa;
+  --sidebar-foreground: #0a0a0a;
+  --sidebar-primary: #0a0a0a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f0f0f0;
+  --sidebar-accent-foreground: #0a0a0a;
+  --sidebar-border: #e5e5e5;
+  --sidebar-ring: #0a0a0a;
+  --sidebar-width: 16rem;
+}
+
+.dark {
+  /* Dark mode - Deep and sophisticated */
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
+  --card: #121212;
+  --card-foreground: #f5f5f5;
+  --popover: #0f0f0f;
+  --popover-foreground: #f5f5f5;
+  --primary: #f5f5f5;
+  --primary-foreground: #0a0a0a;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #f5f5f5;
+  --muted: #1f1f1f;
+  --muted-foreground: #a3a3a3;
+  --accent: #262626;
+  --accent-foreground: #f5f5f5;
+  --destructive: #ef4444;
+  --destructive-foreground: #f5f5f5;
+  --border: #262626;
+  --input: #161616;
+  --ring: #f5f5f5;
+
+  /* Sidebar dark mode */
+  --sidebar: #0f0f0f;
+  --sidebar-foreground: #f5f5f5;
+  --sidebar-primary: #f5f5f5;
+  --sidebar-primary-foreground: #0a0a0a;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #f5f5f5;
+  --sidebar-border: #262626;
+  --sidebar-ring: #f5f5f5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --animate-fade-in: fade-in 0.4s ease-out forwards;
+  --animate-slide-up: slide-up 0.5s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::selection {
+    @apply bg-foreground text-background;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out forwards;
+    opacity: 0;
+  }
+}
+
+@layer components {
+  .content-link {
+    @apply text-foreground underline decoration-muted-foreground/40 underline-offset-[3px]
+           hover:decoration-foreground transition-all duration-200;
+  }
+
+  .news-content a {
+    @apply text-foreground underline decoration-muted-foreground/40 underline-offset-[3px]
+           hover:decoration-foreground transition-all duration-200;
+  }
+
+  .prose {
+    @apply text-foreground/90 leading-[1.8];
+  }
+
+  .prose h2 {
+    @apply text-xl font-semibold text-foreground mt-12 mb-4 tracking-tight;
+  }
+
+  .prose h3 {
+    @apply text-lg font-semibold text-foreground mt-10 mb-3 tracking-tight;
+  }
+
+  .prose h4 {
+    @apply text-base font-medium text-foreground mt-8 mb-2;
+  }
+
+  .prose p {
+    @apply mb-5 text-foreground/85 leading-[1.8];
+  }
+
+  .prose strong {
+    @apply font-semibold text-foreground;
+  }
+
+  .prose a {
+    @apply text-foreground underline decoration-muted-foreground/40 underline-offset-[3px]
+           hover:decoration-foreground transition-all duration-200;
+  }
+
+  .prose ul {
+    @apply my-5 pl-5 space-y-1.5;
+    list-style-type: disc;
+    list-style-position: outside;
+  }
+
+  .prose ul li {
+    @apply text-foreground/85 leading-[1.8] pl-1;
+  }
+
+  .prose ul li::marker {
+    @apply text-muted-foreground;
+  }
+
+  .prose ul ul {
+    @apply mt-1.5 mb-0;
+    list-style-type: circle;
+  }
+
+  .prose ol {
+    @apply my-5 pl-5 space-y-1.5;
+    list-style-type: decimal;
+    list-style-position: outside;
+  }
+
+  .prose ol li {
+    @apply text-foreground/85 leading-[1.8] pl-1;
+  }
+
+  .prose ol li::marker {
+    @apply text-muted-foreground font-medium;
+  }
+
+  .prose code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono text-foreground;
+  }
+
+  .prose pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto my-6 border border-border;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0 text-sm;
+  }
+
+  .prose blockquote {
+    @apply border-l-2 border-border pl-4 my-6 text-muted-foreground italic;
+  }
+
+  .prose hr {
+    @apply my-10 border-border;
+  }
+}

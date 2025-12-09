@@ -1,5 +1,6 @@
 {
   "name": "ritvikkapila-github-io",
+  "homepage": "https://RitvikKapila.github.io",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +10,9 @@
     "prerender:posts": "node scripts/prerender-posts.cjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist --dotfiles"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -24,6 +27,7 @@
     "@tailwindcss/vite": "^4.1.17",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.555.0",
     "motion": "^12.23.24",
     "next": "16.0.4",

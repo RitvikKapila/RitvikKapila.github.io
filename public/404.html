@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/webp" href="/assets/images/profile.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ritvik Kapila</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script takes the current url and converts the path and query
+      // string into just a query string, and then redirects the browser
+      // to the new url with only a query string and hash fragment,
+      // e.g. https://www.foo.tld/one/two?a=b&c=d#qwe becomes
+      // https://www.foo.tld/?/one/two&a=b~and~c=d#qwe
+      (function(l) {
+        if (l.pathname.length > 1) {
+          var pathname = l.pathname.slice(1).split('/').map(function(s) {
+            return s.replace(/&/g, '~and~')
+          }).join('&');
+          var search = l.search.replace(/&/g, '~and~');
+          l.replace(
+            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+            l.pathname.split('/')[0] + '/?/' + pathname + search + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

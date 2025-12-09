@@ -10,7 +10,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
         {/* Logo/Brand */}
         <div className="flex items-center gap-2 md:gap-4">
-          <Link to="/" className="text-lg md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white transition-opacity hover:opacity-70">
+          <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-lg md:text-xl font-semibold tracking-tight text-gray-900 dark:text-white transition-opacity hover:opacity-70">
             Ritvik Kapila
           </Link>
           <div className="flex items-center gap-2 text-xs md:text-sm text-gray-500 dark:text-gray-500">

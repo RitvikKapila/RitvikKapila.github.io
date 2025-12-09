@@ -1,6 +1,6 @@
 export const news = [
   {
-    date: "Apr'25",
+    date: "Oct'25",
     content:
       "Recently left <a href='https://www.essential.ai/' target='_blank' rel='noreferrer'>Essential AI</a> to build something new.",
   },

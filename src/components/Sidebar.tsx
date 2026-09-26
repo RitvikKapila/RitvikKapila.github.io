@@ -30,7 +30,7 @@ export default function Sidebar() {
         <div className="w-full max-w-xs md:max-w-sm mx-auto">
           <div className="rounded-2xl overflow-hidden">
             <img
-              src="/assets/images/profile.webp"
+              src="/assets/images/profile.jpg"
               alt="Ritvik Kapila"
               className="w-full h-full object-cover"
               loading="lazy"

@@ -13,7 +13,7 @@ export default function Home() {
               {/* Profile Image */}
               <div className="w-48 rounded-2xl overflow-hidden">
                 <img
-                  src="/assets/images/profile.webp"
+                  src="/assets/images/profile.jpg"
                   alt="Ritvik Kapila"
                   className="w-full h-full object-cover"
                   loading="lazy"
